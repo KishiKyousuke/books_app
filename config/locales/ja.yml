@@ -23,6 +23,12 @@ ja:
         edit: 編集
         destroy: 削除
         back: 戻る
+      flash:
+        create: 本を登録しました
+        update: 本を更新しました
+        destroy: 本を削除しました
+      confirm:
+        destroy: 削除してよろしいですか？
   date:
     abbr_day_names:
     - 日

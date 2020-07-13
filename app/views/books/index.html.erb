@@ -22,7 +22,7 @@
         <td><%= book.picture %></td>
         <td><%= link_to t('view.common.link.show'), book %></td>
         <td><%= link_to t('view.common.link.edit'), edit_book_path(book) %></td>
-        <td><%= link_to t('view.common.link.destroy'), book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('view.common.link.destroy'), book, method: :delete, data: { confirm: t('view.common.confirm.destroy') } %></td>
       </tr>
     <% end %>
   </tbody>

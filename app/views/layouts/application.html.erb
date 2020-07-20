@@ -15,9 +15,6 @@
         現在<strong><%= current_user.email %></strong>のアカウントでログインしています
         <%= link_to t('devise.shared.links.edit_profile'), edit_user_registration_path %> |
         <%= link_to t('devise.shared.links.sign_out'), destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to t('devise.shared.links.sign_up'), new_user_registration_path %> |
-        <%= link_to t('devise.shared.links.sign_in'), new_user_session_path %>
       <% end %>
     </p>
     <% if notice %>

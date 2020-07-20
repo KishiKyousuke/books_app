@@ -2,6 +2,8 @@
 
 <h1><%= t('view.common.page_title.books') %></h1>
 
+<%= page_entries_info @books %>
+
 <table>
   <thead>
     <tr>
@@ -28,6 +30,8 @@
   </tbody>
 </table>
 
+<br>
+<%= paginate @books %>
 <br>
 
 <%= link_to t('view.common.link.new'), new_book_path %>

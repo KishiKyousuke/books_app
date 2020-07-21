@@ -12,8 +12,9 @@
   <body>
     <p>
       <% if user_signed_in? %>
-        現在<strong><%= current_user.email %></strong>のアカウントでログインしています
+        ようこそ<strong><%= link_to current_user.name, "/users/#{current_user.id}" %></strong>さん！
         <%= link_to t('devise.shared.links.edit_profile'), edit_user_registration_path %> |
+        <%= link_to t('devise.shared.links.users'), "/users" %> |
         <%= link_to t('devise.shared.links.sign_out'), destroy_user_session_path, method: :delete %>
       <% end %>
     </p>

@@ -71,6 +71,12 @@ ja:
         we_need_your_current_password_to_confirm_your_changes: "変更を反映するには現在のパスワードを入力してください"
       new:
         sign_up: "アカウント登録"
+      show:
+        profile: "%{name}さんのプロフィール"
+        address: "住所"
+        introduction: "自己紹介"
+      index:
+        title: "ユーザー一覧"
     sessions:
       new:
         sign_in: "ログイン"
@@ -85,6 +91,7 @@ ja:
         sign_in_with_provider: "%{provider}でログイン"
         sign_up: "アカウント登録"
         edit_profile: "アカウントの編集"
+        users: "ユーザー一覧"
     unlocks:
       new:
         resend_unlock_instructions: "アカウントの凍結解除方法を再送する"

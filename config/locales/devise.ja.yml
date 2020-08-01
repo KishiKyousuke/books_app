@@ -1,0 +1,31 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: "名前"
+        postal_code: "郵便番号"
+        address: "住所"
+        introduction: "自己紹介"
+  devise:
+    sessions:
+      new:
+        sign_in: "ログイン"
+    registrations:
+      edit:
+        title: "プロフィール編集"
+      index:
+        title: "ユーザー一覧"
+      show:
+        profile: "ユーザー詳細"
+        address: "住所"
+        introduction: "自己紹介"
+    password:
+      forgot_your_password:
+        title: "パスワードをお忘れですか？"
+        send_me_reset_password_instructions: "パスワードの再設定方法を送信する"
+    shared:
+      links:
+        edit_profile: "プロフィール編集"
+        users: "ユーザー一覧"
+        sign_out: "ログアウト"
+

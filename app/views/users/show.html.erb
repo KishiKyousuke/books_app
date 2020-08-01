@@ -1,0 +1,11 @@
+<h1><%= t('devise.registrations.show.profile', {name: @user.name}) %></h1>
+
+<h3><%= t('devise.registrations.show.address') %></h3>
+<p>〒<%= @user.postal_code %> <%= @user.address %></p>
+
+<h3><%= t('devise.registrations.show.introduction')%></h3>
+<%= @user.introduction %>
+<br />
+
+<br />
+<%= link_to t('view.common.link.back'), books_path %>

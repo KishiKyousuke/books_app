@@ -1,0 +1,9 @@
+<h1><%= t('devise.registrations.index.title') %></h1>
+
+<% @users.each do |user| %>
+  <p><%= link_to user.name, "/users/#{user.id}" %></p>
+<% end %>
+<br />
+
+<br />
+<%= link_to t('view.common.link.back'), books_path %>

@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2020_08_05_084309) do
-
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.text "memo"
@@ -41,5 +40,4 @@ ActiveRecord::Schema.define(version: 2020_08_05_084309) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
-
 end

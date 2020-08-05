@@ -53,7 +53,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data"
 
-gem "carrierwave"
 gem "rubocop"
 gem "rubocop-performance"
 gem "rubocop-rails"

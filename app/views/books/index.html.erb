@@ -19,7 +19,7 @@
         <td><%= book.title %></td>
         <td><%= book.memo %></td>
         <td><%= book.author %></td>
-        <td><%= book.picture %></td>
+        <td><%= book.picture.filename %></td>
         <td><%= link_to t('view.common.link.show'), book %></td>
         <td><%= link_to t('view.common.link.edit'), edit_book_path(book) %></td>
         <td><%= link_to t('view.common.link.destroy'), book, method: :delete, data: { confirm: t('view.common.confirm.destroy') } %></td>

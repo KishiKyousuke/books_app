@@ -1,5 +1,12 @@
 <h1><%= t('devise.registrations.show.profile', {name: @user.name}) %></h1>
 
+<h3><%= t('devise.registrations.show.avatar') %></h3>
+<% if @user.avatar.attached? %>
+  <%= image_tag @user.avatar.variant(resize_to_fill: [150, 150])%>
+<% else %>
+  <p>画像がありません</p>
+<% end %>
+
 <h3><%= t('devise.registrations.show.address') %></h3>
 <p>〒<%= @user.postal_code %> <%= @user.address %></p>
 

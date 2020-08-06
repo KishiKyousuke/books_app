@@ -4,6 +4,7 @@ class User < ApplicationRecord
   validates :introduction, length: { maximum: 120 }
 
   has_many :books
+  has_one_attached :avatar
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

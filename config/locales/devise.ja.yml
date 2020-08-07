@@ -6,6 +6,7 @@ ja:
         postal_code: "郵便番号"
         address: "住所"
         introduction: "自己紹介"
+        avatar: "ユーザー画像"
   devise:
     sessions:
       new:
@@ -19,6 +20,7 @@ ja:
         profile: "ユーザー詳細"
         address: "住所"
         introduction: "自己紹介"
+        avatar: "ユーザー画像"
     password:
       forgot_your_password:
         title: "パスワードをお忘れですか？"

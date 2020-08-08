@@ -17,7 +17,7 @@ ja:
       index:
         title: "ユーザー一覧"
       show:
-        profile: "ユーザー詳細"
+        profile: "%{name}さんのプロフィール"
         address: "住所"
         introduction: "自己紹介"
         avatar: "ユーザー画像"

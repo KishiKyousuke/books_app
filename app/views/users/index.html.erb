@@ -1,7 +1,7 @@
 <h1><%= t('devise.registrations.index.title') %></h1>
 
 <% @users.each do |user| %>
-  <p><%= link_to user.name, "/users/#{user.id}" %></p>
+  <p><%= link_to user.name, user_path(user.id) %></p>
 <% end %>
 <br />
 

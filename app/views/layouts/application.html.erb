@@ -12,9 +12,9 @@
   <body>
     <p>
       <% if user_signed_in? %>
-        ようこそ<strong><%= link_to current_user.name, "/users/#{current_user.id}" %></strong>さん！
+        ようこそ<strong><%= link_to current_user.name, user_path(current_user.id) %></strong>さん！
         <%= link_to t('devise.shared.links.edit_profile'), edit_user_registration_path %> |
-        <%= link_to t('devise.shared.links.users'), "/users" %> |
+        <%= link_to t('devise.shared.links.users'), users_path %> |
         <%= link_to t('devise.shared.links.sign_out'), destroy_user_session_path, method: :delete %>
       <% end %>
     </p>

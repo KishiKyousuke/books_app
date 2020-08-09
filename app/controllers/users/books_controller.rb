@@ -1,8 +1,6 @@
 class Users::BooksController < ApplicationController
   before_action :authenticate_user!
 
-  # GET /books
-  # GET /books.json
   def index
     @user = User.find(params[:user_id])
     @books = @user.books.page(params[:page])

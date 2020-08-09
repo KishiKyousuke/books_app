@@ -35,6 +35,9 @@ ja:
         edit: 本の編集
         new: 新規作成
         show: 本の詳細
+        other_index: "%{name}さんの登録本一覧"
+      link:
+        index: 登録本一覧
     relationship:
       page_title:
         follows: フォロー一覧

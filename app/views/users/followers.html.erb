@@ -1,0 +1,7 @@
+<h1>フォロワー一覧</h1>
+
+<% @users.each do |user| %>
+  <p><strong><%= link_to user.name, user_path(user.id) %></strong></p>
+<% end %>
+
+<%= link_to t('view.common.link.back'), user_path(params[:id]) %>

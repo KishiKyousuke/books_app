@@ -1,7 +1,6 @@
 class RelationshipsController < ApplicationController
   def create
-    follow = current_user.active_relationships.build(follower_id: params[:user_id])
-    follow.save!
+    current_user.active_relationships.create!(follower_id: params[:user_id])
     redirect_to users_path, notice: t("view.relationship.flash.follow")
   end
 

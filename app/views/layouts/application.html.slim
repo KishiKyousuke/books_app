@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title
+      | BooksApp
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    p
+      - if user_signed_in?
+        |  ようこそ
+        strong
+          = link_to current_user.name, user_path(current_user.id)
+        | さん！ 
+        = link_to t('devise.shared.links.edit_profile'), edit_user_registration_path
+        |  | 
+        = link_to t('devise.shared.links.users'), users_path
+        |  | 
+        = link_to t('devise.shared.links.sign_out'), destroy_user_session_path, method: :delete
+    - if notice
+      p#notice
+        = notice
+    - if alert
+      p#alert
+        = alert
+    = yield

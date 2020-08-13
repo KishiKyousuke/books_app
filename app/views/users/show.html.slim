@@ -1,0 +1,36 @@
+h1
+  = t('devise.registrations.show.profile', {name: @user.name})
+h3
+  = t('devise.registrations.show.avatar')
+- if @user.avatar.attached?
+  = image_tag @user.avatar.variant(resize_to_fill: [150, 150])
+- else
+  p
+    | 画像がありません
+h3
+  = t('devise.registrations.show.address')
+p
+  | 〒
+  = @user.postal_code
+  = @user.address
+h3
+  = t('devise.registrations.show.introduction')
+= @user.introduction
+br
+p
+  = link_to t('view.relationship.link.follows'), follows_user_path(@user.id)
+p
+  = link_to t('view.relationship.link.followers'), followers_user_path(@user.id)
+- if @user != current_user
+  p
+    = link_to t('view.book.link.index'), user_books_path(@user.id)
+  p
+    - if @user.followed_by?(current_user)
+      = link_to t('view.relationship.link.followed'), user_relationships_path(@user.id), method: :delete
+    - else
+      = link_to t('view.relationship.link.follow'), user_relationships_path(@user.id), method: :post
+- else
+  p
+    = link_to t('view.book.link.index'), root_path
+p
+  = link_to t('view.common.link.back'), books_path

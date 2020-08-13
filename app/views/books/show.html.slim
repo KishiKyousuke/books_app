@@ -1,0 +1,25 @@
+h1
+  = t('view.book.page_title.show')
+p
+  strong
+    = Book.human_attribute_name(:title)
+    | :
+  = @book.title
+p
+  strong
+    = Book.human_attribute_name(:memo)
+    | :
+  = @book.memo
+p
+  strong
+    = Book.human_attribute_name(:author)
+    | :
+  = @book.author
+p
+  strong
+    = Book.human_attribute_name(:picture)
+    | :
+  = image_tag(@book.picture_url) if @book.picture.present?
+= link_to t('view.common.link.edit'), edit_book_path(@book)
+|  | 
+= link_to t('view.common.link.back'), books_path

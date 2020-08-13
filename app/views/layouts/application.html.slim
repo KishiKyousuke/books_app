@@ -13,11 +13,15 @@ html
         |  ようこそ
         strong
           = link_to current_user.name, user_path(current_user.id)
-        | さん！ 
+        | さん！
+        = link_to t('view.book.link.index'), books_path
+        |  |
         = link_to t('devise.shared.links.edit_profile'), edit_user_registration_path
-        |  | 
+        |  |
         = link_to t('devise.shared.links.users'), users_path
-        |  | 
+        |  |
+        = link_to t('view.report.link.index'), reports_path
+        |  |
         = link_to t('devise.shared.links.sign_out'), destroy_user_session_path, method: :delete
     - if notice
       p#notice

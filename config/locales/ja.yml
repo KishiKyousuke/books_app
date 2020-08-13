@@ -9,12 +9,19 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     models:
       book: 本
+      report: 日報
     attributes:
       book:
         title: 題名
         memo: 説明
         author: 著者
         picture: 画像
+      report:
+        title: 題名
+        date: 日付
+        study_time: 勉強時間
+        body: 内容
+        author: 作成者
   view:
     common:
       link:
@@ -38,6 +45,7 @@ ja:
         other_index: "%{name}さんの登録本一覧"
       link:
         index: 登録本一覧
+        other_index: "%{name}さんの登録本一覧"
     relationship:
       page_title:
         follows: フォロー一覧
@@ -45,11 +53,21 @@ ja:
       link:
         follow: フォローする
         followed: フォロー済
-        follows: フォロー一覧
-        followers: フォロワー一覧
+        follows: フォロー
+        followers: フォロワー
       flash:
         follow: フォローしました
         unfollow: フォローを解除しました
+    report:
+      page_title:
+        index: 日報一覧
+        new: 日報作成
+        edit: 日報編集
+        show: 日報詳細
+        other_index: "%{name}さんの日報一覧"
+      link:
+        index: 日報一覧
+        other_index: "%{name}さんの日報一覧"
   date:
     abbr_day_names:
     - 日

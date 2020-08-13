@@ -1,0 +1,28 @@
+p
+  strong = Report.human_attribute_name(:title)
+  | ：
+  = @report.title
+p
+  strong = Report.human_attribute_name(:date)
+  | ：
+  = @report.date
+p
+  strong = Report.human_attribute_name(:study_time)
+  | ：
+  = @report.study_time
+p
+  strong = Report.human_attribute_name(:body)
+  | ：
+  = @report.body
+p
+  strong ユーザー名：
+  = @user.name
+
+- if current_user.id == @report.user_id
+  = link_to t('view.common.link.edit'), edit_report_path(@report)
+  | |
+  = link_to t('view.common.link.destroy'), @report, data: { confirm: t('view.common.confirm.destroy') }, method: :delete
+  | |
+  = link_to t('view.common.link.back'), user_reports_path(@report.user_id)
+- else
+  = link_to t('view.common.link.back'), reports_path

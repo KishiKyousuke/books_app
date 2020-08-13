@@ -14,5 +14,18 @@
 <%= @user.introduction %>
 <br />
 
-<br />
-<%= link_to t('view.common.link.back'), books_path %>
+<p><%= link_to t('view.relationship.link.follows'), follows_user_path(@user.id) %></p>
+<p><%= link_to t('view.relationship.link.followers'), followers_user_path(@user.id) %></p>
+
+<% if @user != current_user %>
+  <p><%= link_to t('view.book.link.index'), user_books_path(@user.id) %></p>
+  <p><% if @user.followed_by?(current_user) %>
+    <%= link_to t('view.relationship.link.followed'), user_relationships_path(@user.id), method: :delete %>
+  <% else %>
+    <%= link_to t('view.relationship.link.follow'), user_relationships_path(@user.id), method: :post  %>
+  <% end %></p>
+  <% else %>
+    <p><%= link_to t('view.book.link.index'), root_path %></p>
+<% end %>
+
+<p><%= link_to t('view.common.link.back'), books_path %></p>

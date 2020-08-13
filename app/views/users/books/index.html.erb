@@ -1,4 +1,4 @@
-<h1><%= t('view.book.page_title.index') %></h1>
+<h1><%= t('view.book.page_title.other_index', {name: @user.name}) %></h1>
 
 <%= page_entries_info @books %>
 
@@ -20,9 +20,7 @@
         <td><%= book.memo %></td>
         <td><%= book.author %></td>
         <td><%= book.picture %></td>
-        <td><%= link_to t('view.common.link.show'), book %></td>
-        <td><%= link_to t('view.common.link.edit'), edit_book_path(book) %></td>
-        <td><%= link_to t('view.common.link.destroy'), book, method: :delete, data: { confirm: t('view.common.confirm.destroy') } %></td>
+        <td><%= link_to t('view.common.link.show'), user_book_url(params[:user_id],book.id) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +30,4 @@
 <%= paginate @books %>
 <br>
 
-<%= link_to t('view.common.link.new'), new_book_path %>
+<p><%= link_to t('devise.shared.links.users'), users_path %></p>

@@ -5,7 +5,7 @@ class CreateReports < ActiveRecord::Migration[6.0]
       t.date :date
       t.integer :study_time
       t.string :body
-      t.integer :user_id, null:false
+      t.integer :user_id, null: false
 
       t.timestamps
     end

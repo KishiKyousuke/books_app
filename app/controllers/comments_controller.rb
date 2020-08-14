@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_commentable
-  before_action :set_comment, only:[:update, :destroy, :edit]
+  before_action :set_comment, only: [:update, :destroy, :edit]
 
   def new
     @comment = @commentable.comments.build
@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     @comment.author = current_user.name
 
     if @comment.save!
-      redirect_to @commentable, notice: t('view.common.flash.create')
+      redirect_to @commentable, notice: t("view.common.flash.create")
     else
       render :new
     end
@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      redirect_to [@commentable, @comment], notice: t('view.common.flash.update')
+      redirect_to [@commentable, @comment], notice: t("view.common.flash.update")
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to @commentable, notice: t('view.common.flash.destroy')
+    redirect_to @commentable, notice: t("view.common.flash.destroy")
   end
 
   private
@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
     end
 
     def set_commentable
-      resource, id = request.path.split("/")[1,2]
+      resource, id = request.path.split("/")[1, 2]
       @commentable = resource.singularize.classify.constantize.find(id)
     end
 

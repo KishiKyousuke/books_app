@@ -1,10 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_commentable
-  before_action :set_comment, only:[:update, :destroy, :edit, :show]
-
-  def index
-    @comments = @commentable.comments
-  end
+  before_action :set_comment, only:[:update, :destroy, :edit]
 
   def new
     @comment = @commentable.comments.build
@@ -13,16 +9,13 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.build(comment_params)
     @comment.user_id = current_user.id
+    @comment.author = current_user.name
 
     if @comment.save!
       redirect_to @commentable, notice: t('view.common.flash.create')
     else
       render :new
     end
-  end
-
-  def show
-    @user = User.find(@comment.user_id)
   end
 
   def edit

@@ -21,10 +21,15 @@ p
 - if @comments.present?
   - @comments.each do |comment|
     hr
+    strong
+      = link_to comment.author, user_path(comment.user_id)
     p
       = comment.body
-      br
-      = link_to t('view.common.link.show'), [@report,comment]
+    p
+    - if current_user.id == comment.user_id
+      = link_to t('view.common.link.edit'), [:edit, @report, comment]
+      |  |
+      = link_to t('view.common.link.destroy'), [@report, comment], method: :delete
 
 p
   = link_to t('view.comment.link.new'), new_report_comment_path(@report.id)

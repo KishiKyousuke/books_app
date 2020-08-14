@@ -9,8 +9,8 @@ p
 
 p
   - if current_user.id == @comment.user_id
-      = link_to t('view.common.link.edit'), edit_report_comment_path(params[:report_id], @comment.id)
-      | |
-      = link_to t('view.common.link.destroy'), report_comment_path(params[:report_id], @comment.id), method: :delete
-      | |
+    = link_to t('view.common.link.edit'), [:edit, @commentable, @comment]
+    | |
+    = link_to t('view.common.link.destroy'), [@commentable, @comment], method: :delete
+    | |
   = link_to t('view.common.link.back'), @commentable

@@ -21,6 +21,18 @@ p
     | :
   = image_tag(@book.picture_url) if @book.picture.present?
 
+- if @comments.present?
+  - @comments.each do |comment|
+    hr
+    p
+      = comment.body
+      br
+      = link_to t('view.common.link.show'), [@book,comment]
+
+p
+  = link_to t('view.comment.link.new'), new_book_comment_path(@book.id)
+
+
 - if current_user.id == @book.user_id
   = link_to t('view.common.link.edit'), edit_book_path(@book)
   |  |

@@ -11,6 +11,8 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    @user = User.find(@book.user_id)
+    @comments = @book.comments
   end
 
   # GET /books/new

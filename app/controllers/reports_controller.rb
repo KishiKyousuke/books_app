@@ -11,6 +11,7 @@ class ReportsController < ApplicationController
   # GET /reports/1.json
   def show
     @user = User.find(@report.user_id)
+    @comments = @report.comments
   end
 
   # GET /reports/new

@@ -10,6 +10,7 @@ ja:
     models:
       book: 本
       report: 日報
+      comment: コメント
     attributes:
       book:
         title: 題名
@@ -22,6 +23,8 @@ ja:
         study_time: 勉強時間
         body: 内容
         author: 作成者
+      comment:
+        body: コメント内容
   view:
     common:
       link:
@@ -68,6 +71,15 @@ ja:
       link:
         index: 日報一覧
         other_index: "%{name}さんの日報一覧"
+    comment:
+      page_title:
+        new: コメント作成
+        show: コメント詳細
+        edit: コメント編集
+        index: コメント一覧
+      link:
+        new: コメントする
+        index: コメント一覧
   date:
     abbr_day_names:
     - 日

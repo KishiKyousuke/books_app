@@ -18,6 +18,17 @@ p
   strong ユーザー名：
   = @user.name
 
+- if @comments.present?
+  - @comments.each do |comment|
+    hr
+    p
+      = comment.body
+      br
+      = link_to t('view.common.link.show'), [@report,comment]
+
+p
+  = link_to t('view.comment.link.new'), new_report_comment_path(@report.id)
+
 - if current_user.id == @report.user_id
   = link_to t('view.common.link.edit'), edit_report_path(@report)
   | |

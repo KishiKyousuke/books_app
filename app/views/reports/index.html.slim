@@ -1,4 +1,4 @@
-h1 = t('view.report.page_title.index')
+h1 = t('.title')
 
 table
   thead
@@ -13,8 +13,8 @@ table
         td = report.title
         td = report.date
         td = report.author
-        td = link_to t('view.common.link.show'), report
+        td = link_to t('common.link.show'), report
 
 br
 
-= link_to t('view.common.link.new'), new_report_path
+= link_to t('common.link.new'), new_report_path

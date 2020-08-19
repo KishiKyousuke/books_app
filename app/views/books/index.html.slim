@@ -1,5 +1,5 @@
 h1
-  = t('view.book.page_title.index')
+  = t('.title')
 = page_entries_info @books
 table
   thead
@@ -25,12 +25,12 @@ table
         td
           = book.picture
         td
-          = link_to t('view.common.link.show'), book
+          = link_to t('common.link.show'), book
         td
-          = link_to t('view.common.link.edit'), edit_book_path(book)
+          = link_to t('common.link.edit'), edit_book_path(book)
         td
-          = link_to t('view.common.link.destroy'), book, method: :delete, data: { confirm: t('view.common.confirm.destroy') }
+          = link_to t('common.link.destroy'), book, method: :delete, data: { confirm: t('common.confirm.destroy') }
 br
 = paginate @books
 br
-= link_to t('view.common.link.new'), new_book_path
+= link_to t('common.link.new'), new_book_path

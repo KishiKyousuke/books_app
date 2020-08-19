@@ -14,13 +14,13 @@ html
         strong
           = link_to current_user.name, user_path(current_user.id)
         | さん！
-        = link_to t('view.book.link.index'), books_path
+        = link_to t('books.index.title'), books_path
         |  |
         = link_to t('devise.shared.links.edit_profile'), edit_user_registration_path
         |  |
         = link_to t('devise.shared.links.users'), users_path
         |  |
-        = link_to t('view.report.link.index'), reports_path
+        = link_to t('reports.index.title'), reports_path
         |  |
         = link_to t('devise.shared.links.sign_out'), destroy_user_session_path, method: :delete
     - if notice
@@ -30,3 +30,4 @@ html
       p#alert
         = alert
     = yield
+

@@ -1,5 +1,5 @@
 h1
-  = t('view.book.page_title.show')
+  = t('.title')
 p
   strong
     = Book.human_attribute_name(:title)
@@ -30,17 +30,17 @@ p
       = comment.body
     p
     - if current_user.id == comment.user_id
-      = link_to t('view.common.link.edit'), [:edit, @book, comment]
+      = link_to t('common.link.edit'), [:edit, @book, comment]
       |  |
-      = link_to t('view.common.link.destroy'), [@book, comment], method: :delete
+      = link_to t('common.link.destroy'), [@book, comment], method: :delete
 
 p
-  = link_to t('view.comment.link.new'), new_book_comment_path(@book.id)
+  = link_to t('comments.new.link'), new_book_comment_path(@book.id)
 
 
 - if current_user.id == @book.user_id
-  = link_to t('view.common.link.edit'), edit_book_path(@book)
+  = link_to t('common.link.edit'), edit_book_path(@book)
   |  |
-  = link_to t('view.common.link.back'), books_path
+  = link_to t('common.link.back'), books_path
 - else
-  = link_to t('view.common.link.back'), user_books_path(@book.user_id)
+  = link_to t('common.link.back'), user_books_path(@book.user_id)

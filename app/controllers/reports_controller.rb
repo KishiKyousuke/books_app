@@ -6,7 +6,7 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @user = User.find(@report.user_id)
+    @user = @report.user
     @comments = @report.comments
   end
 

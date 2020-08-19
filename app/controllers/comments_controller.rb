@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     @comment.author = current_user.name
 
     if @comment.save!
-      redirect_to @commentable, notice: t("view.common.flash.create")
+      redirect_to @commentable, notice: t("common.flash.create")
     else
       render :new
     end
@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      redirect_to [@commentable, @comment], notice: t("view.common.flash.update")
+      redirect_to @commentable, notice: t("common.flash.update")
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to @commentable, notice: t("view.common.flash.destroy")
+    redirect_to @commentable, notice: t("common.flash.destroy")
   end
 
   private

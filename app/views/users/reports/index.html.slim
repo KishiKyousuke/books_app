@@ -1,4 +1,4 @@
-h1 = t('view.report.page_title.other_index', {name: @user.name})
+h1 = t('reports.other_index.title', {name: @user.name})
 
 table
   thead
@@ -13,8 +13,8 @@ table
         td = report.title
         td = report.date
         td = report.author
-        td = link_to t('view.common.link.show'), report
+        td = link_to t('common.link.show'), report
 
 br
 
-= link_to t('view.common.link.back'), user_path(@user.id)
+= link_to t('common.link.back'), user_path(@user.id)

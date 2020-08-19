@@ -7,7 +7,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    @user = User.find(@book.user_id)
+    @user = @book.user
     @comments = @book.comments
   end
 
@@ -21,7 +21,7 @@ class BooksController < ApplicationController
   def create
     @book = current_user.books.new(book_params)
     if @book.save
-      redirect_to @book, notice: t("view.common.flash.create")
+      redirect_to @book, notice: t("common.flash.create")
     else
       render :new
     end
@@ -29,7 +29,7 @@ class BooksController < ApplicationController
 
   def update
     if @book.update(book_params)
-      redirect_to @book, notice: t("view.common.flash.update")
+      redirect_to @book, notice: t("common.flash.update")
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class BooksController < ApplicationController
 
   def destroy
     @book.destroy
-    redirect_to books_url, notice: t("view.common.flash.destroy")
+    redirect_to books_url, notice: t("common.flash.destroy")
   end
 
   private

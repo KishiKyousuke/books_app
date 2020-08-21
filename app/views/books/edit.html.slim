@@ -1,6 +1,6 @@
 h1
-  = t('view.book.page_title.edit')
+  = t('.title')
 = render 'form', book: @book
-= link_to t('view.common.link.show'), @book
-|  | 
-= link_to t('view.common.link.back'), books_path
+= link_to t('common.link.show'), @book
+|  |
+= link_to t('common.link.back'), books_path

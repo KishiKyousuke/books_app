@@ -9,47 +9,80 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     models:
       book: 本
+      report: 日報
+      comment: コメント
     attributes:
       book:
         title: 題名
         memo: 説明
         author: 著者
         picture: 画像
-  view:
-    common:
-      link:
-        new: 新規作成
-        show: 詳細
-        edit: 編集
-        destroy: 削除
-        back: 戻る
-      flash:
-        create: 登録しました
-        update: 更新しました
-        destroy: 削除しました
-      confirm:
-        destroy: 削除してよろしいですか？
-    book:
-      page_title:
-        index: 登録本一覧
-        edit: 本の編集
-        new: 新規作成
-        show: 本の詳細
-        other_index: "%{name}さんの登録本一覧"
-      link:
-        index: 登録本一覧
-    relationship:
-      page_title:
-        follows: フォロー一覧
-        followers: フォロワー一覧
-      link:
-        follow: フォローする
-        followed: フォロー済
-        follows: フォロー一覧
-        followers: フォロワー一覧
-      flash:
-        follow: フォローしました
-        unfollow: フォローを解除しました
+      report:
+        title: 題名
+        date: 日付
+        study_time: 勉強時間
+        body: 内容
+        author: 作成者
+      comment:
+        body: コメント内容
+  common:
+    link:
+      new: 新規作成
+      show: 詳細
+      edit: 編集
+      destroy: 削除
+      back: 戻る
+    flash:
+      create: 登録しました
+      update: 更新しました
+      destroy: 削除しました
+    confirm:
+      destroy: 削除してよろしいですか？
+  books:
+    index:
+      title: 登録本一覧
+    edit:
+      title: 本の編集
+    new:
+      title: 本の作成
+    show:
+      title: 本の詳細
+    other_index:
+      title: "%{name}さんの登録本一覧"
+  relationships:
+    follows:
+      title: フォロー一覧
+      link: フォロー
+    followers:
+      title: フォロワー一覧
+      link: フォロワー
+    follow:
+      link: フォローする
+      flash: フォローしました
+    followed:
+      link: フォロー済
+      flash: フォローを解除しました
+  reports:
+    index:
+      title: 日報一覧
+    new:
+      title: 日報作成
+    edit:
+      title: 日報編集
+    show:
+      title: 日報詳細
+    other_index:
+      title: "%{name}さんの日報一覧"
+  comments:
+    new:
+      title: コメント作成
+      link: コメントする
+    show:
+      title: コメント詳細
+    edit:
+      title: コメント編集
+    index:
+      title: コメント一覧
   date:
     abbr_day_names:
     - 日

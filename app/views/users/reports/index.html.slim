@@ -1,0 +1,20 @@
+h1 = t('reports.other_index.title', {name: @user.name})
+
+table
+  thead
+    tr
+      th = Report.human_attribute_name(:title)
+      th = Report.human_attribute_name(:date)
+      th = Report.human_attribute_name(:author)
+
+  tbody
+    - @reports.each do |report|
+      tr
+        td = report.title
+        td = report.date
+        td = report.author
+        td = link_to t('common.link.show'), report
+
+br
+
+= link_to t('common.link.back'), user_path(@user.id)

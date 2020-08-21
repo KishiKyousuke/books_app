@@ -1,7 +1,6 @@
-h1
-  | フォロワー一覧
+h1 = t('relationships.followers.title')
 - @users.each do |user|
   p
     strong
       = link_to user.name, user_path(user.id)
-= link_to t('view.common.link.back'), user_path(params[:id])
+= link_to t('common.link.back'), user_path(params[:id])

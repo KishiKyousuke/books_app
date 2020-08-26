@@ -31,4 +31,11 @@ FactoryBot.define do
     email { "kazuto@example.com" }
     password { "123456" }
   end
+
+  factory :user5, class: User do
+    uid { "5" }
+    name { "Shou Doigaki" }
+    email { "shou@example.com" }
+    password { "123456" }
+  end
 end

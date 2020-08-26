@@ -1,5 +1,4 @@
 require "test_helper"
-require "test/unit"
 
 class UserTest < ActiveSupport::TestCase
   def setup

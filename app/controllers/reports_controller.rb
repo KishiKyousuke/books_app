@@ -22,7 +22,7 @@ class ReportsController < ApplicationController
     @report.author = current_user.name
 
     if @report.save
-      redirect_to @report, notice: t("view.common.flash.create")
+      redirect_to @report, notice: t("common.flash.create")
     else
       render :new
     end
@@ -30,7 +30,7 @@ class ReportsController < ApplicationController
 
   def update
     if @report.update(report_params)
-      redirect_to @report, notice: t("view.common.flash.update")
+      redirect_to @report, notice: t("common.flash.update")
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class ReportsController < ApplicationController
 
   def destroy
     @report.destroy
-    redirect_to reports_url, notice: t("view.common.flash.destroy")
+    redirect_to reports_url, notice: t("common.flash.destroy")
   end
 
   private

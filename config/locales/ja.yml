@@ -71,6 +71,8 @@ ja:
       title: 日報編集
     show:
       title: 日報詳細
+    destroy:
+      link: 日報削除
     other_index:
       title: "%{name}さんの日報一覧"
   comments:

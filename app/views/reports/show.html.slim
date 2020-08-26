@@ -39,9 +39,9 @@ p
   = link_to t('comments.new.link'), new_report_comment_path(@report.id)
 
 - if current_user.id == @report.user_id
-  = link_to t('common.link.edit'), edit_report_path(@report)
+  = link_to t('reports.edit.title'), edit_report_path(@report)
   | |
-  = link_to t('common.link.destroy'), @report, data: { confirm: t('common.confirm.destroy') }, method: :delete
+  = link_to t('reports.destroy.link'), @report, data: { confirm: t('common.confirm.destroy') }, method: :delete
   | |
   = link_to t('common.link.back'), user_reports_path(@report.user_id)
 - else

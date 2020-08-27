@@ -33,7 +33,7 @@ class BooksTest < ApplicationSystemTestCase
 
   test "本の内容を更新する" do
     visit books_url
-    click_on "編集", match: :smart
+    click_on "編集", match: :prefer_exact
 
     fill_in "題名", with: @book.title
     fill_in "説明", with: @book.memo

@@ -1,0 +1,24 @@
+require "application_system_test_case"
+
+class RelationshipsTest < ApplicationSystemTestCase
+  def setup
+    relationship = FactoryBot.create(:relationship)
+    user = relationship.following
+    sign_in_as(user)
+  end
+
+  test "ユーザーをフォローする" do
+    FactoryBot.create(:user4)
+    click_on "ユーザー一覧"
+
+    click_on "フォローする"
+    assert_text "フォローしました"
+  end
+
+  test "ユーザーのフォローを解除する" do
+    click_on "ユーザー一覧"
+
+    click_on "フォロー済"
+    assert_text "フォローを解除しました"
+  end
+end

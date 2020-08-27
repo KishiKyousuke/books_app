@@ -33,7 +33,7 @@ br
     - if current_user.id == comment.user_id
       = link_to t('common.link.edit'), [:edit, @report, comment]
       |  |
-      = link_to t('common.link.destroy'), [@report, comment], method: :delete
+      = link_to t('common.link.destroy'), [@report, comment], method: :delete,  data: { confirm: t('common.confirm.destroy') }
 
 p
   = link_to t('comments.new.link'), new_report_comment_path(@report.id)

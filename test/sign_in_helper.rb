@@ -10,7 +10,7 @@ module SignInHelper
   def sign_in_with_oauth(user)
     OmniAuth.config.test_mode = true
     OmniAuth.config.add_mock(
-        user.provider,
+      user.provider,
         uid: user.uid,
         info: {
             email: user.email,

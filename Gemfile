@@ -66,4 +66,3 @@ gem "omniauth-github"
 gem "dotenv-rails"
 gem "slim-rails"
 gem "html2slim"
-

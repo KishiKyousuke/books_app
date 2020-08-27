@@ -4,7 +4,7 @@ class UserTest < ActiveSupport::TestCase
   def setup
     OmniAuth.config.test_mode = true
     @omniauth_auth = OmniAuth.config.add_mock(
-        :github,
+      :github,
         uid: "12345678",
         info: {
             email: "tarou@example.com",

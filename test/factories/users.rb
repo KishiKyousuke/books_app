@@ -1,41 +1,12 @@
 FactoryBot.define do
-  factory :user1, class: User do
-    id { 1 }
-    provider { "github" }
+  factory :user, class: User, aliases: [:following, :follower] do
     name { "Tarou Yamada" }
-    uid { "12345678" }
-    email { "tarou@example.com" }
+    sequence(:uid) { |i| i }
+    sequence(:email) { |i| "user#{i}@example.com" }
     password { "1234567890" }
-  end
 
-  factory :user2, class: User, aliases: [:following] do
-    id { 2 }
-    uid { "2" }
-    name { "Masami Iwaki" }
-    email { "masami@example.com" }
-    password { "123456" }
-  end
-
-  factory :user3, class: User, aliases: [:follower] do
-    id { 3 }
-    uid { "3" }
-    name { "Satoru Satonaka" }
-    email { "satoru@example.com" }
-    password { "123456" }
-  end
-
-  factory :user4, class: User do
-    id { 4 }
-    uid { "4" }
-    name { "Kazuto Tonoma" }
-    email { "kazuto@example.com" }
-    password { "123456" }
-  end
-
-  factory :user5, class: User do
-    uid { "5" }
-    name { "Shou Doigaki" }
-    email { "shou@example.com" }
-    password { "123456" }
+    trait :with_github do
+      provider { "github" }
+    end
   end
 end

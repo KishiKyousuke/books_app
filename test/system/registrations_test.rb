@@ -3,7 +3,7 @@ require "application_system_test_case"
 class RegistrationsTest < ApplicationSystemTestCase
   def setup
     Rack::Test::UploadedFile.new(File.join(Rails.root, "test/fixtures/image.jpg"))
-    @user = FactoryBot.create(:user5)
+    @user = FactoryBot.create(:user)
   end
 
   test "新規アカウントを登録する" do
@@ -20,6 +20,7 @@ class RegistrationsTest < ApplicationSystemTestCase
     click_on "アカウント登録"
 
     assert_text "アカウント登録が完了しました。"
+    assert_current_path root_path
   end
 
   test "ユーザープロフィールを表示する" do
@@ -27,11 +28,13 @@ class RegistrationsTest < ApplicationSystemTestCase
 
     click_on "#{current_user.name}"
     assert_selector "h1", text: "#{current_user.name}さんのプロフィール"
+    assert_current_path user_path(@user)
   end
 
   test "ユーザープロフィールを編集する" do
     sign_in_as(@user)
     click_on "プロフィール編集"
+    assert_current_path edit_user_registration_path
 
     fill_in "名前", with: "sample"
     fill_in "Eメール", with: "sample@example.com"
@@ -44,6 +47,7 @@ class RegistrationsTest < ApplicationSystemTestCase
     click_on "更新"
 
     assert_text "アカウント情報を変更しました。"
+    assert_current_path root_path
   end
 
   test "アカウントを削除する" do

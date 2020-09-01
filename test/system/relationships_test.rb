@@ -8,11 +8,12 @@ class RelationshipsTest < ApplicationSystemTestCase
   end
 
   test "ユーザーをフォローする" do
-    FactoryBot.create(:user4)
+    FactoryBot.create(:user)
     click_on "ユーザー一覧"
 
     click_on "フォローする"
     assert_text "フォローしました"
+    assert_current_path users_path
   end
 
   test "ユーザーのフォローを解除する" do
@@ -20,5 +21,6 @@ class RelationshipsTest < ApplicationSystemTestCase
 
     click_on "フォロー済"
     assert_text "フォローを解除しました"
+    assert_current_path users_path
   end
 end

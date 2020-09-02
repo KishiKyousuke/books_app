@@ -4,5 +4,6 @@ FactoryBot.define do
     sequence(:memo) { |i| "memo#{i}" }
     sequence(:author) { |i| "author#{i}" }
     picture { Rack::Test::UploadedFile.new(File.join(Rails.root, "test/fixtures/image.jpg")) }
+    user
   end
 end
